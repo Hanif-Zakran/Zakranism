@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Example</title>
+    <!-- CSS Internal -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 80%;
+            margin: 20px 0;
+        }
+        .box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <!-- CSS External -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pilih Tim Mu</h1>
+        </div>
+        <div class="content">
+            <div class="box" style="background-color: #ffcccb; color: #8b0000;">
+                <h2>Tim Merah</h2>
+                <p>Tim ini berisi orang-orang yang ambisius dan mempunyai ego yang tiggi.</p>
+            </div>
+            <div class="box" style="background-color: #add8e6; color: #00008b;">
+                <h2>Tim Biru</h2>
+                <p>Tim ini berisi orang orang dengan intelektual tinggi dan pemikiran yang analitis</p>
+            </div>
+            <div class="box" style="background-color: #90ee90; color: #228b22;">
+                <h2>Tim Hijau</h2>
+                <p>Tim ini berisi orang-orang yang santai dan selalu positif dalam menjalani kehiudpan</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Made by Zakran</p>
+        </div>
+    </div>
+</body>
+</html>
