@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demo jQuery Persegi Merah</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #ff3c3c;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: #ff3c3c;
+      margin: 20px auto;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .btn-group button {
+      background-color: #ff3c3c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn-group button:hover {
+      background-color: #e22e2e;
+    }
+
+    #log {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Demo jQuery - Persegi Merah</h1>
+
+  <div class="btn-group">
+    <button id="hideBtn">Sembunyikan</button>
+    <button id="showBtn">Tampilkan</button>
+    <button id="fadeBtn">Fade</button>
+    <button id="slideBtn">Slide</button>
+    <button id="animateBtn">Animate</button>
+    <button id="stopBtn">Stop</button>
+    <button id="callbackBtn">Callback</button>
+    <button id="chainBtn">Chaining</button>
+  </div>
+
+  <div class="box" id="kotak"></div>
+
+  <div id="log"></div>
+
+  <script>
+    $(document).ready(function () {
+      $("#hideBtn").click(function () {
+        $("#kotak").hide(500);
+      });
+
+      $("#showBtn").click(function () {
+        $("#kotak").show(500);
+      });
+
+      $("#fadeBtn").click(function () {
+        $("#kotak").fadeOut(1000).fadeIn(1000);
+      });
+
+      $("#slideBtn").click(function () {
+        $("#kotak").slideUp(1000).slideDown(1000);
+      });
+
+      $("#animateBtn").click(function () {
+        $("#kotak").animate({
+          width: "300px",
+          height: "300px",
+          left: "50px"
+        }, 1000).animate({
+          width: "200px",
+          height: "200px",
+          left: "0px"
+        }, 1000);
+      });
+
+      $("#stopBtn").click(function () {
+        $("#kotak").stop(true);
+      });
+
+      $("#callbackBtn").click(function () {
+        $("#kotak").fadeOut(1000, function () {
+          $("#log").text("Fade selesai! Menjalankan callback...");
+          $(this).fadeIn(1000);
+        });
+      });
+
+      $("#chainBtn").click(function () {
+        $("#kotak")
+          .css("background-color", "#e60000")
+          .slideUp(500)
+          .slideDown(500)
+          .fadeOut(500)
+          .fadeIn(500)
+          .animate({ borderRadius: "50%" }, 500)
+          .animate({ borderRadius: "10px" }, 500);
+      });
+    });
+  </script>
+
+</body>
+</html>
